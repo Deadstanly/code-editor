@@ -11,7 +11,6 @@ export class CodeEditorService {
   constructor(private http: HttpClient) { }
 
   checkCode(language: string, code: string): Observable<Record<string, string>[]> {
-    debugger
     const url: string = `${BASE_URL}?language=${language}&code=${encodeURIComponent(code)}`
     return this.http.get<Record<string, string>[]>(url);
   }
