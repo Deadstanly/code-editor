@@ -1,0 +1,36 @@
+
+<nz-card>
+  <nz-typography>
+    <h2>Онлайн Редактор Кода</h2>
+    <h4>Выведите в консоль текст "Hello world!"</h4>
+  </nz-typography>
+  <nz-select
+    class="lang-select"
+    [(ngModel)]="language"
+    (ngModelChange)="switchLanguage($event)">
+    <nz-option
+      [nzValue]="'python'" [nzLabel]="'Python'">
+    </nz-option>
+    <nz-option [nzValue]="'javascript'" [nzLabel]="'JavaScript'">
+    </nz-option>
+  </nz-select>
+  <button
+    class="btn"
+    nz-button
+    nzType="primary"
+    (click)="runCode()"
+    [disabled]="!code.trim()">
+    Проверить
+  </button>
+  <div class="editor-container">
+    <ngx-monaco-editor
+      [(ngModel)]="code"
+      [options]="editorOptions">
+    </ngx-monaco-editor>
+  </div>
+  <nz-typography>
+    <h3>Результат выполнения:</h3>
+  </nz-typography>
+  <p>{{result['result'] || error}}</p>
+  <pre>{{result['result_code']}}</pre>
+</nz-card>

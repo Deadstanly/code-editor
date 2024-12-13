@@ -1,0 +1,19 @@
+{
+  "execute": [
+    {
+      "id": "1",
+      "language": "python",
+      "code": "print('Hello World!')",
+      "result_code": "Hello World!",
+      "result": "Код выполнен успешно!"
+
+    },
+    {
+      "id": "2",
+      "language": "javascript",
+      "code": "console.log('Hello World!')",
+      "result_code": "Hello World!",
+      "result": "Код выполнен успешно!"
+    }
+  ]
+}
